@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>W4ke - Welcome!</title>
   
-  <subtitle>欢迎来到w4ke的博客~</subtitle>
+  <subtitle>Welcome to W4ke&#39;s blog!</subtitle>
   <link href="http://www.w4ke.cn/atom.xml" rel="self"/>
   
   <link href="http://www.w4ke.cn/"/>
