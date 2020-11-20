@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.w4ke.cn/2020/11/20/Untitled/</loc>
-    
-    <lastmod>2020-11-20</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.w4ke.cn/categories/index.html</loc>
     
     <lastmod>2020-11-20</lastmod>
@@ -46,13 +39,6 @@
 
   
   <url>
-    <loc>http://www.w4ke.cn/tags/echo/</loc>
-    <lastmod>2020-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.w4ke.cn/tags/sjx/</loc>
     <lastmod>2020-11-20</lastmod>
     <changefreq>daily</changefreq>
@@ -60,47 +46,5 @@
   </url>
   
 
-  
-  <url>
-    <loc>http://www.w4ke.cn/categories/echo/</loc>
-    <lastmod>2020-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.w4ke.cn/categories/echo/eecho/</loc>
-    <lastmod>2020-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.w4ke.cn/categories/echo/eecho/eeecho/</loc>
-    <lastmod>2020-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.w4ke.cn/categories/echo/eecho/eeecho/eeeecho/</loc>
-    <lastmod>2020-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.w4ke.cn/categories/echo/eecho/eeecho/eeeecho/eeeeecho/</loc>
-    <lastmod>2020-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.w4ke.cn/categories/echo/eecho/eeecho/eeeecho/eeeeecho/eeeeeecho/</loc>
-    <lastmod>2020-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
   
 </urlset>
