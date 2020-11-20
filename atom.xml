@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>W4ke - Welcome!</title>
+  <title>W4ke</title>
   
   <subtitle>Welcome to my blog!</subtitle>
   <link href="http://www.w4ke.cn/atom.xml" rel="self"/>
