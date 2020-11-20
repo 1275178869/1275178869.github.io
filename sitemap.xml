@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.w4ke.cn/2020/11/20/Docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2020-11-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.w4ke.cn/categories/index.html</loc>
     
     <lastmod>2020-11-20</lastmod>
@@ -22,13 +29,6 @@
     
   </url>
   
-  <url>
-    <loc>http://www.w4ke.cn/2020/11/20/hello-world/</loc>
-    
-    <lastmod>2020-11-20</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>http://www.w4ke.cn/</loc>
@@ -39,7 +39,7 @@
 
   
   <url>
-    <loc>http://www.w4ke.cn/tags/sjx/</loc>
+    <loc>http://www.w4ke.cn/tags/Docker/</loc>
     <lastmod>2020-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
