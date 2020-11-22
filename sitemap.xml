@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.w4ke.cn/2020/11/22/2020%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98web%E9%83%A8%E5%88%86WriteUp/</loc>
+    
+    <lastmod>2020-11-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.w4ke.cn/2020/11/21/MySQL%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
     
     <lastmod>2020-11-21</lastmod>
@@ -39,7 +46,7 @@
 
   <url>
     <loc>http://www.w4ke.cn/</loc>
-    <lastmod>2020-11-21</lastmod>
+    <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -47,14 +54,14 @@
   
   <url>
     <loc>http://www.w4ke.cn/tags/Docker/</loc>
-    <lastmod>2020-11-21</lastmod>
+    <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.w4ke.cn/tags/MySQL/</loc>
-    <lastmod>2020-11-21</lastmod>
+    <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -63,14 +70,14 @@
   
   <url>
     <loc>http://www.w4ke.cn/categories/Docker/</loc>
-    <lastmod>2020-11-21</lastmod>
+    <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.w4ke.cn/categories/MySQL/</loc>
-    <lastmod>2020-11-21</lastmod>
+    <lastmod>2020-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
