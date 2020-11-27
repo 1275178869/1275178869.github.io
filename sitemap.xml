@@ -46,7 +46,7 @@
 
   <url>
     <loc>http://www.w4ke.cn/</loc>
-    <lastmod>2020-11-22</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -54,14 +54,14 @@
   
   <url>
     <loc>http://www.w4ke.cn/tags/Docker/</loc>
-    <lastmod>2020-11-22</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.w4ke.cn/tags/MySQL/</loc>
-    <lastmod>2020-11-22</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -70,14 +70,14 @@
   
   <url>
     <loc>http://www.w4ke.cn/categories/Docker/</loc>
-    <lastmod>2020-11-22</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.w4ke.cn/categories/MySQL/</loc>
-    <lastmod>2020-11-22</lastmod>
+    <lastmod>2020-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
