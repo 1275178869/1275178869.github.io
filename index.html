@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>W4ke - Welcome to my blog!</title><meta name="author" content="W4ke"><meta name="copyright" content="W4ke"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta property="og:type" content="website">
+<meta property="og:title" content="W4ke">
+<meta property="og:url" content="http://www.w4ke.cn/index.html">
+<meta property="og:site_name" content="W4ke">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.w4ke.cn/null">
+<meta property="article:author" content="W4ke">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.w4ke.cn/null"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://www.w4ke.cn/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="hx2NJX9FQ8Jehlsr"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: undefined,
+  isToc: false,
+  postUpdate: '2022-08-22 17:51:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/macWhite.css"><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="W4ke" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/preview.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">W4ke</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">W4ke</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/1275178869" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1275178869@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1275178869&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/08/22/%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4B%E7%AB%99%E7%9A%84%E5%85%B3%E6%B3%A8%E5%88%97%E8%A1%A8/" title="快速删除B站的关注列表">快速删除B站的关注列表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-22T09:25:31.000Z" title="发表于 2022-08-22 17:25:31">2022-08-22</time></span></div><div class="content">如何快速删除B站的关注列表事情是这样的，三个月前，我的室友嘲笑我B站账号等级低，跟我说当代大学生怎么能不看B站，不会还有人B站才LV4吧？
+一气之下我就去github上搜了个B站自动登录，上面能实现B站的自动登录、自动分享，自动点赞这三个功能（也许不止这三个功能但是我只用到了这三个功能）。
+但是，这脚本会自动的帮我关注直播账号并参加天选时刻，也会顺便帮我把up主关注上，久而久之，我的天选时刻列表已经多达629个关注（之前已经删过一批，后面懒的搞了就开摆）。这也就造成我的关注列表比较杂乱，有时候会给我推一些我完全不喜欢的东西，今天就要彻底解决这玩意，做个记录下次还能再使用（毕竟脚本还挂着）。
+1.找到需要删除的列表
+我这边比较特殊，需要删除的只是这个列表里面的所有内容。如果你需要删除的关注都堆在一起，想留下的不想留下的都有，那么首先新建一个列表
+
+
+然后点击右上角的按钮，将需要删除的up主一一挪到这个列表中
+
+
+2.执行控制台命令打开点击键盘的F12键（笔记本可能需要加一个Fn），会出现一个控制台，然后点击Console：
+
+在控制台中输入该命令：
+1$(&quot;.be-dropdo ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/12/ssr%E6%90%AD%E5%BB%BA/" title="ssr搭建">ssr搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-12T10:43:35.000Z" title="发表于 2022-01-12 18:43:35">2022-01-12</time></span></div><div class="content">ubuntu一键搭建SSRgithub
+1链接: https://pan.baidu.com/s/1NIELKMYKzl6FGrf_V0JGOQ?pwd=5svz 提取码: 5svz 复制这段内容后打开百度网盘手机App，操作更方便哦
+github或者百度网盘获取sh脚本下载ssr.sh，执行
+12chmod 777 ssr.shsudo sh ssr.sh
+接下来根据提示操作即可。
+其他操作指令如下
+查看ssr运行状态/配置sh ssr.sh info
+
+更改密码、端口、混淆参数的最简单方法：重新运行一次安装脚本；
+
+SSR管理命令：启动:systemctl start shadowsocksR停止:systemctl stop shadowsocksR重启:systemctl restart shadowsocksR
+
+卸载SSRsh ssr.sh uninstall
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/11/22/2020%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98web%E9%83%A8%E5%88%86WriteUp/" title="2020极客大挑战web部分WriteUp">2020极客大挑战web部分WriteUp</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-22T15:51:29.000Z" title="发表于 2020-11-22 23:51:29">2020-11-22</time></span></div><div class="content">WriteUP极客要打一个月，本菜鸡就打了前半个月，后半个月因为其（老）他（懒）比（狗）赛（了）就没接着做题，虽然也不一定做得出来，总而言之写一下WriteUp纪念一下。
+Welcome题目地址: http://49.234.224.119:8000/题目描述： 欢迎来到极客大挑战!
+访问题目链接，发现405报错。百度了一下，发现是GET或者POST请求出问题了。拿Postman试一下：看了一下需要POST上传一个roam1,roam2,这两个的值不能相等，哈希值要相等，好了，传入数组。因为各种哈希都无法对数组进行操作，会返回False。然后又因为False === False  =&gt; True，所以顺利绕过~
+在phpinfo里面找找可以利用的信息：众所周知，一般的Apache和nginx的根目录是/var/www/html，所以只需要访问http://49.234.224.119:8000/f1444aagggg.php即可。访问结果是这：其实这是个假页面，是手动写出来的 /捂脸至于为什么，可以随便访问一个不存在的页面：下面会出现Apache信息，然鹅flag页面没有，所以真 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/11/21/MySQL%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="MySQL基本操作">MySQL基本操作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-21T14:18:00.000Z" title="发表于 2020-11-21 22:18:00">2020-11-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/MySQL/">MySQL</a></span></div><div class="content">菜鸟教程传送门
+这里只做一些简单的摘记，如果想系统的学习或者针对某个模块进行学习还请参考菜鸟教程的链接。对数据库的操作主要讲究增、删、改、查，这里也以这个为大纲进行讲解。
+
+MySQL基本结构数据库首先要讲的是数据库，一个服务器往往有好几个数据库，像information_schema,mysql,performace_schema,phpmyadmin,sys是内置的库，然后像employ,wordfriend这两个数据库是我自己创建的。一个库里面可以放很多个表，是MySQL最大的一个存储单位。
+表这里的email等四个就是表，一个表里可以装好几个字段。
+字段一个表里可以有好几个字段，email表里有两个字段，一个字段叫 id，另一个叫email，每个字段下面都有很多内容。
+MySQL结构介绍完毕，接下来介绍MySQL的一些基本语法。
+
+MySQL基本语法登录MySQL12345mysql -u username -p   回车密码eg：mysql -u root -proot
+输入密码的时候看不到，不要以为自己键盘坏了。
+增这里的增主要是新建数据库、数据库内添加表、表内添加字段，字 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/11/20/Docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="Docker简单使用教程">Docker简单使用教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-20T12:35:00.000Z" title="发表于 2020-11-20 20:35:00">2020-11-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Docker/">Docker</a></span></div><div class="content">Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。
+Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。
+容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。
+说白了就是一个开销更低，安装更便捷的虚拟机。
+这里介绍一点简单的Docker使用教程，详细教程参考菜鸟教程
+
+Docker 基本语法安装 DockerUbuntu下使用命令:
+12apt-get install docker.iocurl -sSL https://get.daocloud.io/docker | sh
+下载镜像12docker pull + 镜像名:标签eg:docker pull ubuntu:20.04
+Docker 官方提供了Docker Hub仓库，所有用户都可以向Docker Hub贡献自己制作的Docker镜像。
+创建容器1docker run -it -p 90:80 ubuntu:20.04   /bin/ ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">W4ke</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1275178869"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/1275178869" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1275178869@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1275178869&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/08/22/%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4B%E7%AB%99%E7%9A%84%E5%85%B3%E6%B3%A8%E5%88%97%E8%A1%A8/" title="快速删除B站的关注列表">快速删除B站的关注列表</a><time datetime="2022-08-22T09:25:31.000Z" title="发表于 2022-08-22 17:25:31">2022-08-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/12/ssr%E6%90%AD%E5%BB%BA/" title="ssr搭建">ssr搭建</a><time datetime="2022-01-12T10:43:35.000Z" title="发表于 2022-01-12 18:43:35">2022-01-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/11/22/2020%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98web%E9%83%A8%E5%88%86WriteUp/" title="2020极客大挑战web部分WriteUp">2020极客大挑战web部分WriteUp</a><time datetime="2020-11-22T15:51:29.000Z" title="发表于 2020-11-22 23:51:29">2020-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/11/21/MySQL%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="MySQL基本操作">MySQL基本操作</a><time datetime="2020-11-21T14:18:00.000Z" title="发表于 2020-11-21 22:18:00">2020-11-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/11/20/Docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="Docker简单使用教程">Docker简单使用教程</a><time datetime="2020-11-20T12:35:00.000Z" title="发表于 2020-11-20 20:35:00">2020-11-20</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Docker/"><span class="card-category-list-name">Docker</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/MySQL/"><span class="card-category-list-name">MySQL</span><span class="card-category-list-count">1</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Docker/" style="font-size: 1.1em; color: #999">Docker</a> <a href="/tags/MySQL/" style="font-size: 1.1em; color: #999">MySQL</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">3</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-08-22T09:51:53.356Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By W4ke</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "剑未佩妥，出门已是江湖,酒尚余温，入口不识乾坤,愿你历尽千帆，归来仍是少年".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: false,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '剑未佩妥，出门已是江湖'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

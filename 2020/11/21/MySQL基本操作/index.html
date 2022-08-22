@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MySQL基本操作 | W4ke</title><meta name="keywords" content="MySQL"><meta name="author" content="W4ke"><meta name="copyright" content="W4ke"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="菜鸟教程传送门 这里只做一些简单的摘记，如果想系统的学习或者针对某个模块进行学习还请参考菜鸟教程的链接。对数据库的操作主要讲究增、删、改、查，这里也以这个为大纲进行讲解。  MySQL基本结构数据库首先要讲的是数据库，一个服务器往往有好几个数据库，像information_schema,mysql,performace_schema,phpmyadmin,sys是内置的库，然后像employ,wo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL基本操作">
+<meta property="og:url" content="http://www.w4ke.cn/2020/11/21/MySQL%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="W4ke">
+<meta property="og:description" content="菜鸟教程传送门 这里只做一些简单的摘记，如果想系统的学习或者针对某个模块进行学习还请参考菜鸟教程的链接。对数据库的操作主要讲究增、删、改、查，这里也以这个为大纲进行讲解。  MySQL基本结构数据库首先要讲的是数据库，一个服务器往往有好几个数据库，像information_schema,mysql,performace_schema,phpmyadmin,sys是内置的库，然后像employ,wo">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2160231/202011/2160231-20201121195640649-1201588851.png">
+<meta property="article:published_time" content="2020-11-21T14:18:00.000Z">
+<meta property="article:modified_time" content="2021-12-27T15:11:27.862Z">
+<meta property="article:author" content="W4ke">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2020.cnblogs.com/blog/2160231/202011/2160231-20201121195640649-1201588851.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://www.w4ke.cn/2020/11/21/MySQL%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="hx2NJX9FQ8Jehlsr"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2021-12-27 23:11:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/macWhite.css"><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="W4ke" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://img2020.cnblogs.com/blog/2160231/202011/2160231-20201121195640649-1201588851.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">W4ke</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">MySQL基本操作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-21T14:18:00.000Z" title="发表于 2020-11-21 22:18:00">2020-11-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-27T15:11:27.862Z" title="更新于 2021-12-27 23:11:27">2021-12-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MySQL/">MySQL</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-tutorial.html">菜鸟教程传送门</a></p>
+<p>这里只做一些简单的摘记，如果想系统的学习或者针对某个模块进行学习还请参考菜鸟教程的链接。<br>对数据库的操作主要讲究增、删、改、查，这里也以这个为大纲进行讲解。</p>
+<hr>
+<h1 id="MySQL基本结构"><a href="#MySQL基本结构" class="headerlink" title="MySQL基本结构"></a>MySQL基本结构</h1><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p><img src="https://img-blog.csdnimg.cn/20200927150142276.png?x-oss-process=image" alt="在这里插入图片描述"><br>首先要讲的是数据库，一个服务器往往有好几个数据库，像<code>information_schema</code>,<code>mysql</code>,<code>performace_schema</code>,<code>phpmyadmin</code>,<code>sys</code>是内置的库，然后像<code>employ</code>,<code>wordfriend</code>这两个数据库是我自己创建的。一个库里面可以放很多个表，是MySQL最大的一个存储单位。</p>
+<h2 id="表"><a href="#表" class="headerlink" title="表"></a>表</h2><p><img src="https://img-blog.csdnimg.cn/20200927150728815.png?x-oss-process=image" alt="在这里插入图片描述"><br>这里的<code>emai</code>l等四个就是表，一个表里可以装好几个字段。</p>
+<h2 id="字段"><a href="#字段" class="headerlink" title="字段"></a>字段</h2><p><img src="https://img-blog.csdnimg.cn/20200927151441445.png?x-oss-process=image" alt="在这里插入图片描述"><br>一个表里可以有好几个字段，<code>email</code>表里有两个字段，一个字段叫 <code>id</code>，另一个叫<code>email</code>，每个字段下面都有很多内容。</p>
+<p>MySQL结构介绍完毕，接下来介绍MySQL的一些基本语法。</p>
+<hr>
+<h1 id="MySQL基本语法"><a href="#MySQL基本语法" class="headerlink" title="MySQL基本语法"></a>MySQL基本语法</h1><h2 id="登录MySQL"><a href="#登录MySQL" class="headerlink" title="登录MySQL"></a>登录MySQL</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mysql -u username -p   回车<br>密码<br><br>eg：mysql -u root -p<br>root<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927145457482.png?x-oss-process=image" alt="在这里插入图片描述"><br>输入密码的时候看不到，不要以为自己键盘坏了。</p>
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><p>这里的增主要是新建数据库、数据库内添加表、表内添加字段，字段里面添加内容。</p>
+<ul>
+<li><p><strong>新建数据库</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">create database 数据库名;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927152221205.png#pic_center" alt="在这里插入图片描述"><br>创建了一个数据库叫<code>wake</code>。<br><img src="https://img-blog.csdnimg.cn/20200927152307292.png#pic_center" alt="在这里插入图片描述"></p>
+</li>
+<li><p><strong>创建表</strong><br>首先<code>use wake;</code>  =&gt; 使用<code>wake</code>数据库。<br>只有进入了该数据库以后接下来的操作才有效，不然会报错。<br><img src="https://img-blog.csdnimg.cn/20200927161240631.png#pic_center" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">create table table_name (column_name column_type);<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/202009271613204.png?x-oss-process=image" alt="在这里插入图片描述"><br>这里我创建了一个叫<code>wake_table</code>的表，然后还创建了两个字段，一个叫<code>wake_column1</code>，是字符型，长度为100；另一个叫<code>wake_column2</code>，是数值型。</p>
+<ul>
+<li><p><strong>创建字段</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">alter table table_name add column_name column_type;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927175402251.png#pic_center" alt="在这里插入图片描述"></p>
+</li>
+<li><p><strong>给字段赋值</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">INSERT INTO table_name (字段1 , 字段2 , 字段3) values (value1 , value2 , value3 );<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927180314339.png?x-oss-process=image" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><ul>
+<li><p><strong>删数据库</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">drop database &lt;数据库名&gt;;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927180626600.png?x-oss-process=image" alt="在这里插入图片描述"></p>
+</li>
+<li><p><strong>删表</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">DROP TABLE table_name ;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927181235966.png?x-oss-process=image" alt="在这里插入图片描述"></p>
+</li>
+<li><p><strong>删字段</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ALTER TABLE 表名 DROP 字段名;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927181402432.png?x-oss-process=image" alt="在这里插入图片描述"></p>
+</li>
+<li><p><strong>删内容</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">DELETE FROM table_name +条件<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927181743179.png?x-oss-process=image" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><ul>
+<li><p><strong>改表名</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">rename table oldtable to newtable;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927191851470.png?x-oss-process=image" alt="在这里插入图片描述"></p>
+</li>
+<li><p><strong>改字段名</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">alter table table_name change column old_name new_name type;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927192314234.png?x-oss-process=image" alt="在这里插入图片描述"></p>
+</li>
+<li><p><strong>改内容</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">UPDATE table_name SET field1=new-value1, field2=new-value2 +条件<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927192745274.png?x-oss-process=image" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><ul>
+<li><strong>查库名</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">show databases;        #查看该服务器一共有几个数据库<br></code></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/2020092719295387.png?x-oss-process=image" alt="在这里插入图片描述"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">select database();        #查看当前使用的数据库<br></code></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/20200927193103248.png#pic_center" alt="在这里插入图片描述"></li>
+</ul>
+<ul>
+<li><p><strong>查表名</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">show tables;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927193233336.png#pic_center" alt="在这里插入图片描述"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">select table_name from information_schema.tables where table_schema = database();<br>select table_name from information_schema.tables where table_schema = &#x27;wake&#x27;;<br>#这里 database() 等效于 ‘wake’，都是表示数据库名<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927193426376.png#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020092719353524.png#pic_center" alt="在这里插入图片描述"><br>这个操作能实现的原理是，<code>information_schema</code>库里面存放了当前服务器的所有库名、表名、字段名，便于管理。<br><img src="https://img-blog.csdnimg.cn/20200927194416396.png?x-oss-process=image" alt="在这里插入图片描述"><br>这里在左边可以看到<code>page</code>和<code>word</code>表是在wordfriend里面的，然后在<code>information_schema</code>数据库的<code>tables</code>数据库中，可以看到这两个表的<code>TABLE_SCHEMA</code>字段就是<code>wordfriend</code>，所以可以根据这个进行查询。</p>
+</li>
+<li><p><strong>查字段名</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">select * from awake_table;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/2020092720050956.png#pic_center" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">select column_name from information_schema.columns where table_name = &#x27;awake_table&#x27;;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927194927535.png#pic_center" alt="在这里插入图片描述"><br>此处于上面的<code>table_schema</code>同理，在<code>information_schema</code>数据库中的<code>COLUMNS</code>表中放了所有的字段名。其中<code>COLUMN_NAME</code>字段放了所有的字段名，与之对应的<code>TABLE_NAME</code>就是该字段的所对应的表的名字。</p>
+<ul>
+<li><strong>查内容</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">select column_name from table_name;<br></code></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/20200927195725341.png#pic_center" alt="在这里插入图片描述"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">select * from table_name;<br></code></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/20200927200334675.png#pic_center" alt="在这里插入图片描述"><br>这个列出该表的所有内容。</li>
+</ul>
+<p>在这里还能加<code>order by</code> 根据哪个字段排序:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">select * from awake_table order by 1;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927201114529.png?x-oss-process=image" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200927201129515.png?x-oss-process=image" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200927201139759.png?x-oss-process=image" alt="在这里插入图片描述"><br>比较之下应该可以看出排序的效果~</p>
+<p>还可以根据某个字段逆序排序：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">select * from table_name order by 1 desc;<br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200927201340815.png?x-oss-process=image" alt="在这里插入图片描述"></p>
+<p>目前就整理那么多，这些都是比较基本的需要掌握的，多练习，你会发现更多神奇的骚操作~</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">W4ke</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.w4ke.cn/2020/11/21/MySQL%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">http://www.w4ke.cn/2020/11/21/MySQL%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.w4ke.cn" target="_blank">W4ke</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MySQL/">MySQL</a></div><div class="post_share"><div class="social-share" data-image="https://img2020.cnblogs.com/blog/2160231/202011/2160231-20201121195640649-1201588851.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/11/22/2020%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98web%E9%83%A8%E5%88%86WriteUp/"><img class="prev-cover" src="https://img2020.cnblogs.com/blog/2160231/202011/2160231-20201121195640649-1201588851.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2020极客大挑战web部分WriteUp</div></div></a></div><div class="next-post pull-right"><a href="/2020/11/20/Docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"><img class="next-cover" src="https://img2020.cnblogs.com/blog/2160231/202011/2160231-20201121195640649-1201588851.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Docker简单使用教程</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/null" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">W4ke</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1275178869"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/1275178869" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1275178869@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1275178869&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">MySQL基本结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5"><span class="toc-number">1.3.</span> <span class="toc-text">字段</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">MySQL基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95MySQL"><span class="toc-number">2.1.</span> <span class="toc-text">登录MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E"><span class="toc-number">2.2.</span> <span class="toc-text">增</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0"><span class="toc-number">2.3.</span> <span class="toc-text">删</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B9"><span class="toc-number">2.4.</span> <span class="toc-text">改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5"><span class="toc-number">2.5.</span> <span class="toc-text">查</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/08/22/%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4B%E7%AB%99%E7%9A%84%E5%85%B3%E6%B3%A8%E5%88%97%E8%A1%A8/" title="快速删除B站的关注列表">快速删除B站的关注列表</a><time datetime="2022-08-22T09:25:31.000Z" title="发表于 2022-08-22 17:25:31">2022-08-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/12/ssr%E6%90%AD%E5%BB%BA/" title="ssr搭建">ssr搭建</a><time datetime="2022-01-12T10:43:35.000Z" title="发表于 2022-01-12 18:43:35">2022-01-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/11/22/2020%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98web%E9%83%A8%E5%88%86WriteUp/" title="2020极客大挑战web部分WriteUp">2020极客大挑战web部分WriteUp</a><time datetime="2020-11-22T15:51:29.000Z" title="发表于 2020-11-22 23:51:29">2020-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/11/21/MySQL%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="MySQL基本操作">MySQL基本操作</a><time datetime="2020-11-21T14:18:00.000Z" title="发表于 2020-11-21 22:18:00">2020-11-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/11/20/Docker%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="Docker简单使用教程">Docker简单使用教程</a><time datetime="2020-11-20T12:35:00.000Z" title="发表于 2020-11-20 20:35:00">2020-11-20</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By W4ke</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>
