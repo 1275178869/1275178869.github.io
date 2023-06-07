@@ -40,8 +40,8 @@
     <title>ssr搭建</title>
     <link href="http://www.w4ke.cn/2022/01/12/ssr%E6%90%AD%E5%BB%BA/"/>
     <id>http://www.w4ke.cn/2022/01/12/ssr%E6%90%AD%E5%BB%BA/</id>
-    <published>2022-01-12T10:43:35.000Z</published>
-    <updated>2022-01-12T11:14:59.059Z</updated>
+    <published>2022-01-12T10:43:00.000Z</published>
+    <updated>2022-11-10T15:17:42.472Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ubuntu一键搭建SSR"><a href="#ubuntu一键搭建SSR" class="headerlink" title="ubuntu一键搭建SSR"></a>ubuntu一键搭建SSR</h1><p><a href="https://github.com/1275178869/ssr">github</a></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">链接: https://pan.baidu.com/s/1NIELKMYKzl6FGrf_V0JGOQ?pwd=5svz 提取码: 5svz 复制这段内容后打开百度网盘手机App，操作更方便哦<br></code></pre></td></tr></table></figure><p>github或者百度网盘获取sh脚本<br>下载ssr.sh，执行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">chmod 777 ssr.sh<br>sudo sh ssr.sh<br></code></pre></td></tr></table></figure><p>接下来根据提示操作即可。</p><h2 id="其他操作指令如下"><a href="#其他操作指令如下" class="headerlink" title="其他操作指令如下"></a>其他操作指令如下</h2><ul><li><p>查看ssr运行状态/配置<br><code>sh ssr.sh info</code></p></li><li><p>更改密码、端口、混淆参数的最简单方法：重新运行一次安装脚本；</p></li><li><p>SSR管理命令：<br>启动:<code>systemctl start shadowsocksR</code><br>停止:<code>systemctl stop shadowsocksR</code><br>重启:<code>systemctl restart shadowsocksR</code></p></li><li><p>卸载SSR<br><code>sh ssr.sh uninstall</code></p></li></ul>]]></content>
     
